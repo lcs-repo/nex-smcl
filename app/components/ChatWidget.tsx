@@ -91,8 +91,7 @@ export default function ChatWidget() {
               <span className="online-status"></span>
             </div>
             <div className="chat-info">
-              <span className="chat-title">Sampana Support</span>
-              <span className="chat-status">Online</span>
+              <span className="chat-title">Sampana Cares Chat</span>
             </div>
             <button className="minimize-button">-</button>
           </div>

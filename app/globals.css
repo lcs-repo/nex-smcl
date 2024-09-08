@@ -295,7 +295,7 @@ footer {
 .chat-input-field {
   flex-grow: 1;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px;
   border-radius: 20px;
   background-color: #f1f0f0;
@@ -379,11 +379,14 @@ html, body {
   width: 80px;
   height: 80px;
   overflow: visible;
+  border-radius: 50%;
 }
 
 #chat-minimized {
   cursor: pointer;
   transition: transform 0.3s ease;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 #chat-minimized:hover {
