@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -5,6 +8,16 @@ import ImageSlider from './components/ImageSlider'
 import ChatWidget from './components/ChatWidget'
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    return null // or a loading spinner
+  }
+
   return (
     <>
       <Header />
