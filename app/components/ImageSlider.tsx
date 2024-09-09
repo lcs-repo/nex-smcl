@@ -44,7 +44,7 @@ export default function ImageSlider() {
   }, [loadedImages])
 
   return (
-    <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] overflow-hidden">
+    <div className="relative w-full max-w-[1600px] mx-auto aspect-[16/9] overflow-hidden">
       {images.map((src, index) => (
         <Image
           key={src}

@@ -48,7 +48,7 @@ export default function Home() {
         </section>
         <section id="photo-album" className="py-8">
           <h2 className="text-2xl font-bold mb-4 text-center">Our Facility</h2>
-          <div className="image-slider-container">
+          <div className="image-slider-container px-4 md:px-8 lg:px-0 max-w-[1600px] mx-auto">
             <ImageSlider />
           </div>
         </section>
