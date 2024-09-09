@@ -21,9 +21,15 @@ export default function ChatManagement() {
     try {
       const response = await fetch('/api/chats');
       const data = await response.json();
-      setChats(data);
-      if (!selectedChat && data.length > 0) {
-        setSelectedChat(data[0]);
+      // Sort chats by the timestamp of the last message in descending order
+      const sortedChats = data.sort((a: Chat, b: Chat) => {
+        const aLastMessage = a.messages[a.messages.length - 1];
+        const bLastMessage = b.messages[b.messages.length - 1];
+        return new Date(bLastMessage.timestamp).getTime() - new Date(aLastMessage.timestamp).getTime();
+      });
+      setChats(sortedChats);
+      if (!selectedChat && sortedChats.length > 0) {
+        setSelectedChat(sortedChats[0]);
       }
     } catch (error) {
       console.error('Error fetching chats:', error);
