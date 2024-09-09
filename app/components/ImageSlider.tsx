@@ -3,23 +3,23 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-const slides = [
-  require('/assets/images/B.jpg'),
-  require('/assets/images/B2.jpg'),
-  require('/assets/images/B3.jpg'),
-  require('/assets/images/chatus.png'),
-  require('/assets/images/D.jpg'),
-  require('/assets/images/E.jpg'),
-  require('/assets/images/R1.jpg'),
-  require('/assets/images/R2.jpg'),
-  require('/assets/images/R3.jpg'),
-  require('/assets/images/R4.jpg'),
-  require('/assets/images/R5.jpg'),
-  require('/assets/images/R6.jpg'),
-  require('/assets/images/R7.jpg'),
-  require('/assets/images/R8.jpg'),
-  require('/assets/images/R9.jpg'),
-]
+import B from '/assets/images/B.jpg'
+import B2 from '/assets/images/B2.jpg'
+import B3 from '/assets/images/B3.jpg'
+import chatus from '/assets/images/chatus.png'
+import D from '/assets/images/D.jpg'
+import E from '/assets/images/E.jpg'
+import R1 from '/assets/images/R1.jpg'
+import R2 from '/assets/images/R2.jpg'
+import R3 from '/assets/images/R3.jpg'
+import R4 from '/assets/images/R4.jpg'
+import R5 from '/assets/images/R5.jpg'
+import R6 from '/assets/images/R6.jpg'
+import R7 from '/assets/images/R7.jpg'
+import R8 from '/assets/images/R8.jpg'
+import R9 from '/assets/images/R9.jpg'
+
+const slides = [B, B2, B3, chatus, D, E, R1, R2, R3, R4, R5, R6, R7, R8, R9]
 
 export default function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -61,7 +61,7 @@ export default function ImageSlider() {
   return (
     <div id="slideshow" style={{ position: 'relative', maxWidth: '450px', margin: '0 auto' }}>
       <Image 
-        src={slides[currentSlide].default} 
+        src={slides[currentSlide]} 
         alt="Facility Image" 
         width={450} 
         height={300} 
