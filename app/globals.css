@@ -403,3 +403,8 @@ html, body {
 #chat-widget.minimized #chat-body {
   display: none;
 }
+
+.image-slider-container {
+  position: relative;
+  z-index: 1;
+}
