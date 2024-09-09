@@ -27,7 +27,7 @@ export default function ImageSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length)
-    }, 2000) // Changed back to 5000ms (5 seconds) for a slower transition
+    }, 1500) // Changed back to 5000ms (5 seconds) for a slower transition
     return () => clearInterval(timer)
   }, [])
 

@@ -10,15 +10,25 @@ export default function ChatManagement() {
   const [chats, setChats] = useState<Chat[]>([]);
 
   useEffect(() => {
-    fetchChats();
-  }, []);
+    const fetchChats= async() => {
+        try {
+            const response = await fetch('api/chats');
+            const data = await response.json();
+            setChats(data);
+        } catch (error) {
+            console.error('Error fetching chats:', error)
+        }
+    }; 
 
-  const fetchChats = async () => {
-    // Implement API call to fetch chats
-    const response = await fetch('/api/chats');
-    const data = await response.json();
-    setChats(data);
-  };
+    // Fetch chats immediately
+    fetchChats();
+
+    // Set up polling every 5 seconds
+    const intervalId = setInterval (fetchChats, 1000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="chat-management">
