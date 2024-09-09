@@ -19,7 +19,6 @@ const slides = [
   '/assets/images/R7.jpg',
   '/assets/images/R8.jpg',
   '/assets/images/R9.jpg',
-  '/assets/images/support-avatar.png',
 ]
 
 export default function ImageSlider() {
