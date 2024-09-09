@@ -81,7 +81,7 @@ export default function ChatWidget() {
     <div id="chat-widget" className={isMinimized ? 'minimized' : ''}>
       {isMinimized ? (
         <div id="chat-minimized" onClick={toggleChat}>
-          <Image src="/assets/images/chatus.png" alt="Chat with us" width={80} height={80} />
+          <Image src="/assets/images/chatus.jpg" alt="Chat with us" width={80} height={80} />
         </div>
       ) : (
         <>
