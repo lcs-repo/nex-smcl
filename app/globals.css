@@ -419,3 +419,13 @@ html, body {
   height: 100% !important;
   object-fit: contain !important;
 }
+
+.user-message {
+  font-weight: bold;
+}
+
+.user-content {
+  background-color: #fffacd;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
