@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const images = [
   '/assets/images/B.png',
   '/assets/images/B2.png',
   '/assets/images/B3.png',
-  '/assets/images/chatus.jpg',
   '/assets/images/D.png',
   '/assets/images/E.png',
   '/assets/images/R1.png',
@@ -23,35 +22,43 @@ const images = [
 
 export default function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [loadedImages, setLoadedImages] = useState<string[]>([])
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % images.length)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length)
+    }, 1000) // Changed back to 5000ms (5 seconds) for a slower transition
+    return () => clearInterval(timer)
+  }, [])
+
+  const handleImageLoad = (src: string) => {
+    setLoadedImages(prev => [...prev, src])
   }
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)
+  const handleImageError = (src: string) => {
+    console.error(`Failed to load image: ${src}`)
   }
+
+  useEffect(() => {
+    console.log('Loaded images:', loadedImages)
+  }, [loadedImages])
 
   return (
-    <div className="relative w-full max-w-[800px] h-[450px] mx-auto">
-      <Image
-        src={images[currentSlide]}
-        alt={`Facility Image ${currentSlide + 1}`}
-        fill
-        style={{ objectFit: 'contain' }}
-      />
-      <button
-        onClick={prevSlide}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2"
-      >
-        &#10094;
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2"
-      >
-        &#10095;
-      </button>
+    <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] overflow-hidden">
+      {images.map((src, index) => (
+        <Image
+          key={src}
+          src={src}
+          alt={`Facility Image ${index + 1}`}
+          fill
+          className="object-contain transition-opacity duration-500"
+          style={{
+            opacity: index === currentSlide ? 1 : 0,
+          }}
+          onLoadingComplete={() => handleImageLoad(src)}
+          onError={() => handleImageError(src)}
+        />
+      ))}
     </div>
   )
 }
