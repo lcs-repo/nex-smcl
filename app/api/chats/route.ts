@@ -5,7 +5,17 @@ import Chat from '../../../models/Chat';
 export async function GET() {
   try {
     await dbConnect();
-    const chats = await Chat.find().sort({ updatedAt: -1 }).limit(50);
+    const chats = await Chat.aggregate([
+      { $sort: { 'messages.timestamp': -1 } },
+      { $group: {
+          _id: '$sessionId',
+          id: { $first: '$_id' },
+          sessionId: { $first: '$sessionId' },
+          messages: { $push: '$messages' }
+        }
+      },
+      { $limit: 50 }
+    ]);
     return NextResponse.json(chats);
   } catch (error) {
     console.error('Error fetching chats:', error);
