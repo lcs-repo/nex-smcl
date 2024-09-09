@@ -34,7 +34,7 @@ export default function ImageSlider() {
   }, [])
 
   return (
-    <div className="relative w-full max-w-[800px] h-[450px] mx-auto overflow-hidden rounded-lg shadow-lg">
+    <div className="relative w-full max-w-[800px] aspect-video mx-auto overflow-hidden rounded-lg shadow-lg">
       {images.map((src, index) => (
         <div
           key={src}
@@ -45,8 +45,8 @@ export default function ImageSlider() {
           <Image
             src={src}
             alt={`Facility Image ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             priority={index === currentSlide}
           />
         </div>

@@ -46,8 +46,8 @@ export default function Home() {
           <p>Monday - Saturday</p>
           <p>6:00 AM - 5:00 PM</p>
         </section>
-        <section id="photo-album">
-          <h2>Our Facility</h2>
+        <section id="photo-album" className="py-8">
+          <h2 className="text-2xl font-bold mb-4 text-center">Our Facility</h2>
           <ImageSlider />
         </section>
         <section id="contact">
