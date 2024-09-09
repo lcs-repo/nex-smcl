@@ -11,9 +11,10 @@ export async function GET() {
           _id: '$sessionId',
           id: { $first: '$_id' },
           sessionId: { $first: '$sessionId' },
-          messages: { $push: '$messages' }
+          messages: { $first: '$messages' }
         }
       },
+      { $sort: { 'messages.0.timestamp': -1 } },
       { $limit: 50 }
     ]);
     return NextResponse.json(chats);

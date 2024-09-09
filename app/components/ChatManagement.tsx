@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
 
+interface Message {
+  sender: string;
+  content: string;
+  timestamp: Date;
+}
+
 interface Chat {
   id: string;
   sessionId: string;
-  messages: { sender: string; content: string; timestamp: Date }[];
+  messages: Message[];
 }
 
 export default function ChatManagement() {
@@ -32,7 +38,7 @@ export default function ChatManagement() {
         <div key={chat.sessionId} className="chat-item">
           <h3>Session ID: {chat.sessionId}</h3>
           <ul>
-            {chat.messages.flat().map((message, index) => (
+            {chat.messages.slice().reverse().map((message, index) => (
               <li key={index}>
                 {message.sender}: {message.content}
                 {message.timestamp && ` (${new Date(message.timestamp).toLocaleString()})`}
