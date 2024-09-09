@@ -44,7 +44,10 @@ export default function ImageSlider() {
   }, [loadedImages])
 
   return (
-    <div className="relative w-full max-w-[1600px] mx-auto aspect-[16/9] overflow-hidden">
+    <div 
+      className="relative w-full max-w-[1600px] mx-auto aspect-[16/9] overflow-hidden"
+      style={{ width: '100%', maxWidth: '1600px', aspectRatio: '16/9' }}
+    >
       {images.map((src, index) => (
         <Image
           key={src}
@@ -54,6 +57,9 @@ export default function ImageSlider() {
           className="object-contain transition-opacity duration-500"
           style={{
             opacity: index === currentSlide ? 1 : 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
           }}
           onLoadingComplete={() => handleImageLoad(src)}
           onError={() => handleImageError(src)}

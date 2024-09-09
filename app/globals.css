@@ -408,14 +408,14 @@ html, body {
   position: relative;
   z-index: 1;
   margin-bottom: 2rem;
-  width: 100%;
-  max-width: 1600px;
-  aspect-ratio: 16 / 9;
+  width: 100% !important;
+  max-width: 1600px !important;
+  aspect-ratio: 16 / 9 !important;
   overflow: hidden;
 }
 
 .image-slider-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
 }
