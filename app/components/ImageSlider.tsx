@@ -46,6 +46,7 @@ export default function ImageSlider() {
             src={src}
             alt={`Facility Image ${index + 1}`}
             fill
+            sizes="(max-width: 800px) 100vw, 800px"
             style={{ objectFit: 'contain' }}
             priority={index === currentSlide}
           />

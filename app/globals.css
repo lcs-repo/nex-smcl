@@ -36,8 +36,8 @@ header {
 }
 
 .logo {
-  max-width: 70%;
-  width: 70%;
+  max-width: 80%;
+  width: 80%;
   height: auto;
 }
 
@@ -407,4 +407,11 @@ html, body {
 .image-slider-container {
   position: relative;
   z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.image-slider-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
