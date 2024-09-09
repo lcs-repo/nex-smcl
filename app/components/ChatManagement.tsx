@@ -38,7 +38,7 @@ export default function ChatManagement() {
 
   useEffect(() => {
     fetchChats();
-    const intervalId = setInterval(fetchChats, 5000);
+    const intervalId = setInterval(fetchChats, 1000);
     return () => clearInterval(intervalId);
   }, [fetchChats]);
 
