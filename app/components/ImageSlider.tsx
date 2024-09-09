@@ -32,14 +32,14 @@ export default function ImageSlider() {
   }, [])
 
   return (
-    <div id="slideshow" className="relative w-full max-w-[800px] h-[500px] mx-auto">
-      <Image 
-        src={images[currentSlide]}
-        alt={`Facility Image ${currentSlide + 1}`}
-        fill
-        style={{ objectFit: 'contain' }}
-        priority={currentSlide === 0}
-      />
+    <div id="slideshow" className="relative w-full max-w-[800px] aspect-[16/9] mx-auto">
+        <Image 
+            src={images[currentSlide]}
+            alt={`Facility Image ${currentSlide + 1}`}
+            fill
+            style={{ objectFit: 'cover' }}
+            priority={currentSlide === 0}
+        />
       <button onClick={prevSlide} className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10">&#10094;</button>
       <button onClick={nextSlide} className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10">&#10095;</button>
     </div>
