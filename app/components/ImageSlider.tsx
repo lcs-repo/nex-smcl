@@ -34,20 +34,22 @@ export default function ImageSlider() {
   }, [])
 
   return (
-    <div className="relative w-full max-w-[800px] aspect-[16/9] mx-auto overflow-hidden rounded-lg shadow-lg">
+    <div className="relative w-full max-w-[800px] h-[450px] mx-auto overflow-hidden rounded-lg shadow-lg">
       {images.map((src, index) => (
-        <Image
+        <div
           key={src}
-          src={src}
-          alt={`Facility Image ${index + 1}`}
-          fill
-          style={{
-            objectFit: 'cover',
-            transition: 'opacity 0.5s ease-in-out',
-            opacity: index === currentSlide ? 1 : 0,
-          }}
-          priority={index === currentSlide}
-        />
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <Image
+            src={src}
+            alt={`Facility Image ${index + 1}`}
+            layout="fill"
+            objectFit="cover"
+            priority={index === currentSlide}
+          />
+        </div>
       ))}
       <button
         onClick={prevSlide}
