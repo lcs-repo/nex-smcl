@@ -39,8 +39,11 @@ export default function ChatManagement() {
           <h3>Session ID: {chat.sessionId}</h3>
           <ul>
             {chat.messages.slice().reverse().map((message, index) => (
-              <li key={index}>
-                {message.sender}: {message.content}
+              <li key={index} className={message.sender === 'User' ? 'user-message' : ''}>
+                <strong>{message.sender}:</strong>{' '}
+                <span className={message.sender === 'User' ? 'user-content' : ''}>
+                  {message.content}
+                </span>
                 {message.timestamp && ` (${new Date(message.timestamp).toLocaleString()})`}
               </li>
             ))}
