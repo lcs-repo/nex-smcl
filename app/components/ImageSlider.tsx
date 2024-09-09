@@ -4,21 +4,21 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const slides = [
-  '/assets/images/B.jpg',
-  '/assets/images/B2.jpg',
-  '/assets/images/B3.jpg',
-  '/assets/images/chatus.png',
-  '/assets/images/D.jpg',
-  '/assets/images/E.jpg',
-  '/assets/images/R1.jpg',
-  '/assets/images/R2.jpg',
-  '/assets/images/R3.jpg',
-  '/assets/images/R4.jpg',
-  '/assets/images/R5.jpg',
-  '/assets/images/R6.jpg',
-  '/assets/images/R7.jpg',
-  '/assets/images/R8.jpg',
-  '/assets/images/R9.jpg',
+  require('/assets/images/B.jpg'),
+  require('/assets/images/B2.jpg'),
+  require('/assets/images/B3.jpg'),
+  require('/assets/images/chatus.png'),
+  require('/assets/images/D.jpg'),
+  require('/assets/images/E.jpg'),
+  require('/assets/images/R1.jpg'),
+  require('/assets/images/R2.jpg'),
+  require('/assets/images/R3.jpg'),
+  require('/assets/images/R4.jpg'),
+  require('/assets/images/R5.jpg'),
+  require('/assets/images/R6.jpg'),
+  require('/assets/images/R7.jpg'),
+  require('/assets/images/R8.jpg'),
+  require('/assets/images/R9.jpg'),
 ]
 
 export default function ImageSlider() {
@@ -61,7 +61,7 @@ export default function ImageSlider() {
   return (
     <div id="slideshow" style={{ position: 'relative', maxWidth: '450px', margin: '0 auto' }}>
       <Image 
-        src={slides[currentSlide]} 
+        src={slides[currentSlide].default} 
         alt="Facility Image" 
         width={450} 
         height={300} 
