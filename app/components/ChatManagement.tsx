@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { format } from 'date-fns';
 
 interface Message {
@@ -17,24 +17,24 @@ export default function ChatManagement() {
   const [chats, setChats] = useState<Chat[]>([]);
   const [selectedChat, setSelectedChat] = useState<Chat | null>(null);
 
-  useEffect(() => {
-    const fetchChats = async () => {
-      try {
-        const response = await fetch('/api/chats');
-        const data = await response.json();
-        setChats(data);
-        if (data.length > 0) {
-          setSelectedChat(data[0]);
-        }
-      } catch (error) {
-        console.error('Error fetching chats:', error);
+  const fetchChats = useCallback(async () => {
+    try {
+      const response = await fetch('/api/chats');
+      const data = await response.json();
+      setChats(data);
+      if (!selectedChat && data.length > 0) {
+        setSelectedChat(data[0]);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching chats:', error);
+    }
+  }, [selectedChat]);
 
+  useEffect(() => {
     fetchChats();
     const intervalId = setInterval(fetchChats, 5000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [fetchChats]);
 
   return (
     <div className="chat-management">
