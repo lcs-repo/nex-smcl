@@ -41,9 +41,19 @@ export default function Doctors() {
               <p>Monday, Wednesday (9:00 AM - 11:00 AM)</p>
             </div>
             <div className="doctor">
+              <h3>Dr. Amelie Crislyd Avenido</h3>
+              <p>Hematologist</p>
+              <p>Monday (9:00 AM - 12:00 PM)</p>
+            </div>
+            <div className="doctor">
               <h3>Dr. Aileen Abigail Fariñas</h3>
               <p>Internal Medicine</p>
               <p>Monday (9:00 AM - 11:00 AM), <br />Friday, Saturday (2:00 PM - 5:00 PM)</p>
+            </div>
+            <div className="doctor">
+              <h3>Dr. Portia Buenafe</h3>
+              <p>OB-Gyn/Sonologist</p>
+              <p>Thursday (9:00 AM - 11:00 AM)</p>
             </div>
             <div className="doctor">
               <h3>Dr. Maria Rhina Uy</h3>
@@ -51,9 +61,14 @@ export default function Doctors() {
               <p>Friday (11:00 AM - 2:00 PM)</p>
             </div>
             <div className="doctor">
+              <h3>Dr. Portia Buenafe</h3>
+              <p>OB-Gyn/Sonologist</p>
+              <p>Monday (9:00 AM - 11:00 AM), <br />Friday, Saturday (2:00 PM - 5:00 PM)</p>
+            </div>
+            <div className="doctor">
               <h3>Dr. Mary Grace Alvaran</h3>
               <p>Pediatrician</p>
-              <p>Monday (3:00 PM - 5:00 PM),<br /> Wednesday (7:00 AM - 12:00 PM),<br /> Friday (2:00 PM - 5:00 PM), <br />Saturday (8:00 AM - 1:00 PM)</p>
+              <p>Monday (7:00 AM - 9:30 AM),<br /> Wednesday (7:00 AM - 12:00 PM),<br /> Friday (2:00 PM - 5:00 PM), <br />Saturday (7:00 AM - 9:30 AM)</p>
             </div>
             <div className="doctor">
               <h3>Dr. Omar Braga</h3>
