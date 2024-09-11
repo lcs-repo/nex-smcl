@@ -61,9 +61,9 @@ export default function Doctors() {
               <p>Friday (11:00 AM - 2:00 PM)</p>
             </div>
             <div className="doctor">
-              <h3>Dr. Portia Buenafe</h3>
-              <p>OB-Gyn/Sonologist</p>
-              <p>Monday (9:00 AM - 11:00 AM), <br />Friday, Saturday (2:00 PM - 5:00 PM)</p>
+              <h3>Dr. Felissa Aniag</h3>
+              <p>OB-Gyn</p>
+              <p>Monday (2:00 PM - 4:00 PM)</p>
             </div>
             <div className="doctor">
               <h3>Dr. Mary Grace Alvaran</h3>
