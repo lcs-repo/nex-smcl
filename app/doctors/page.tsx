@@ -78,7 +78,7 @@ export default function Doctors() {
             <div className="doctor">
               <h3>Dr. Alberto Gabriel</h3>
               <p>Radiologist/Sonologist</p>
-              <p>Daily (8:00 AM - 9:00 AM)</p>
+              <p>Monday to Friday (8:00 AM - 9:00 AM)</p>
             </div>
             <div className="doctor">
               <h3>Dr. Amanda Mae Manalaysay</h3>
@@ -108,7 +108,7 @@ export default function Doctors() {
             <div className="doctor">
               <h3>Dr. Mark Manicad</h3>
               <p>Generalist</p>
-              <p>Tuesday (8:00 AM - 12:00 AM), <br /> Friday (8:00 AM - 12:00 AM) </p>
+              <p>Tuesday (8:00 AM - 12:00 PM), <br /> Friday (8:00 AM - 10:00 AM) </p>
             </div>
           </div>
         </section>
