@@ -568,3 +568,13 @@ html, body {
 .doctor p {
   margin-bottom: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  nav ul li {
+    margin: 0 5px;
+  }
+  
+  nav ul li a {
+    font-size: 14px;
+  }
+}
