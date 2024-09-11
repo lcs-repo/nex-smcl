@@ -36,8 +36,8 @@ header {
 }
 
 .logo {
-  max-width: 80%;
-  width: 80%;
+  max-width: 600px;
+  width: 100%;
   height: auto;
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 .tagline {
-  color: #fff;
+  color: #e6e6e6;
   font-style: italic;
   margin-top: 0.5rem;
   margin-bottom: 0;
@@ -546,3 +546,25 @@ html, body {
   color: #999;
 }
 
+.doctors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.doctor {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+}
+
+.doctor h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.doctor p {
+  margin-bottom: 0.5rem;
+}

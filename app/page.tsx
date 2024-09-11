@@ -12,6 +12,12 @@ export default function Home() {
 
   useEffect(() => {
     setIsClient(true)
+    const hash = window.location.hash
+    if (hash) {
+      setTimeout(() => {
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
+      }, 0)
+    }
   }, [])
 
   if (!isClient) {
