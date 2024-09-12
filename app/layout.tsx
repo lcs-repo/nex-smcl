@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: 'Sampana Mediclinic, Laboratory, Medical Care, Diagnostic Facilities, Malolos, Bulacan',
   authors: [{ name: 'Sampana Mediclinic' }],
   openGraph: {
-    title: 'SAMPANA MEDICLINIC AND LABORATORY',
+    title: 'Sampana Mediclinic and Laboratory',
     description: 'High-quality medical care with advanced diagnostic facilities in Malolos, Bulacan.',
     url: 'https://sampanalab.com',
     siteName: 'Sampana Mediclinic and Laboratory',
