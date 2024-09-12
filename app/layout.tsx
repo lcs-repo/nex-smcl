@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SAMPANA MEDICLINIC AND LABORATORY',
+  title: 'Sampana Mediclinic and Laboratory',
   description: 'Committed to Caring since 2000. High-quality medical care with advanced diagnostic facilities in Malolos, Bulacan.',
   keywords: 'Sampana Mediclinic, Laboratory, Medical Care, Diagnostic Facilities, Malolos, Bulacan',
   authors: [{ name: 'Sampana Mediclinic' }],
